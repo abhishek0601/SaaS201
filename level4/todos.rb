@@ -20,8 +20,7 @@ class Todo
   end
 
   def to_displayable_string
-    display_string = "[X] #{@text} " if @completed
-    display_string = "[ ] #{@text} " if !@completed
+    display_string = @completed? "[X] #{@text} " : "[ ] #{@text} " 
     display_string += "#{@due_date}" if overdue? || due_later?
     return display_string
   end
